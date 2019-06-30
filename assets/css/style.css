@@ -1,13 +1,13 @@
 body {
-  background:#db5a05;
+  background: #db5a05;
 }
 
 .calcBox {
-  height: 650px;
+  height: 690px;
   width: 400px;
   padding: 10px;
   margin-top: 20px;
-  background: rgba(256, 256, 256, .75);
+  background: rgba(256, 256, 256, 0.75);
   border: 2px solid #9b9b9b;
   border-radius: 10px;
 }
