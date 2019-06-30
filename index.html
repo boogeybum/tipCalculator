@@ -20,7 +20,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text">$</span>
           </div>
-          <input type="text" class="form-control" id="subtotal" aria-label="Amount (to the nearest dollar)">
+          <input type="text" class="form-control" id="subtotal" aria-label="Subtotal Amount (including tax)">
           <div class="input-group-append">
           </div>
         </div>
@@ -32,7 +32,6 @@
           <label for="tipPercent">Tip Percent</label>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
-            <!-- <span class="input-group-text">$</span> -->
           </div>
           <input type="text" class="form-control" id="tipPercent" aria-label="Tip Percentage Value">
 
@@ -58,7 +57,7 @@
 
     <div class="row">
       <div class="col-sm3">
-        <button type="submit" class="btn btn-primary">Calculate</button>
+        <button type="button" class="btn btn-primary" id="calculate">Calculate</button>
       </div>
     </div>
 

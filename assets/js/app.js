@@ -1,14 +1,20 @@
-const subtotal = 145;
-const tipPercent = 15;
-const numPeople = 4;
 
-function tipCalc(val1, val2, val3) {
-  const percentage = val2 / 100;
-  const tipAmount = val1 * percentage;
-  const total = val1 + tipAmount;
-  const totalPerPerson = tipAmount / val3;
 
-  console.log('The subtotal is ' + subtotal);
+function tipCalc() {
+  // store user input from webpage
+  let subtotal = document.getElementById("subtotal").value;
+  const tipPercent = document.getElementById("tipPercent").value;
+  const numPeople = document.getElementById("numPeople").value;
+  
+  // calculate based on user input values
+  subtotal = parseFloat(subtotal);
+  const percentage = tipPercent / 100;
+  const tipAmount = subtotal * percentage;
+  const total = subtotal + tipAmount;
+  const totalPerPerson = tipAmount / numPeople;
+  
+  console.log(typeof subtotal);
+  console.log('The subtotal is ' + subtotal.toFixed(2));
   console.log('The total with tip is ' + total.toFixed(2));
   console.log('The total per person is ' + totalPerPerson.toFixed(2));
   
@@ -17,4 +23,7 @@ function tipCalc(val1, val2, val3) {
 
 }
 
-tipCalc(subtotal, tipPercent, numPeople);
+document.getElementById("calculate").onclick =
+function() {
+  tipCalc();
+}
