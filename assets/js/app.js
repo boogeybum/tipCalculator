@@ -1,4 +1,4 @@
-const subtotal = 125;
+const subtotal = 145;
 const tipPercent = 15;
 const numPeople = 4;
 
@@ -6,8 +6,9 @@ function tipCalc(val1, val2, val3) {
   const percentage = val2 / 100;
   const tipAmount = val1 * percentage;
   const total = val1 + tipAmount;
-  const totalPerPerson = total / val3;
+  const totalPerPerson = tipAmount / val3;
 
+  console.log('The subtotal is ' + subtotal);
   console.log('The total with tip is ' + total.toFixed(2));
   console.log('The total per person is ' + totalPerPerson.toFixed(2));
   
