@@ -3,11 +3,15 @@ body {
 }
 
 .calcBox {
-  height: 690px;
+  height: 720px;
   width: 400px;
   padding: 10px;
   margin-top: 20px;
   background: rgba(256, 256, 256, 0.75);
   border: 2px solid #9b9b9b;
   border-radius: 10px;
+}
+
+.foot-text {
+  font-size: .8rem;
 }
