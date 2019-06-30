@@ -13,13 +13,14 @@ function tipCalc() {
   const total = subtotal + tipAmount;
   const totalPerPerson = tipAmount / numPeople;
   
-  console.log(typeof subtotal);
-  console.log('The subtotal is ' + subtotal.toFixed(2));
-  console.log('The total with tip is ' + total.toFixed(2));
-  console.log('The total per person is ' + totalPerPerson.toFixed(2));
+  // console log values to confirm functionality
+  console.log('The subtotal variable is a "' + typeof subtotal + '" data type.');
+  console.log('The subtotal is $' + subtotal.toFixed(2));
+  console.log('The total with tip is $' + total.toFixed(2));
+  console.log('The total per person is $' + totalPerPerson.toFixed(2) + ' at a tip rate of ' + tipPercent + '% divided by ' + numPeople + ' people paying.');
   
-  document.getElementById("totalWithTip").innerHTML = total.toFixed(2);
-  document.getElementById("totalPerPerson").innerHTML = totalPerPerson.toFixed(2);
+  document.getElementById("totalWithTip").innerHTML = "$" + total.toFixed(2);
+  document.getElementById("totalPerPerson").innerHTML = "$" + totalPerPerson.toFixed(2);
 
 }
 

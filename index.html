@@ -1,96 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <title>Tip Calculator</title>
-</head>
-<body>
-  <div class="container">
-    <h1>Tip Calculator</h1>
-  </div>
-  <div class="container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Tip Calculator</title>
+  </head>
+  <body>
+    <div class="container calcBox">
+      <h1>Tip Calculator</h1>
 
-    <div class="row">
-      <div class="col-sm3">
-        <label for="subtotal">Meal Subtotal (including tax)</label>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text">$</span>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm">
+            <label for="subtotal">Meal Subtotal (including tax)</label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                id="subtotal"
+                aria-label="Subtotal Amount (including tax)"
+                placeholder="Meal Subtotal"
+              />
+              <div class="input-group-append"></div>
+            </div>
           </div>
-          <input type="text" class="form-control" id="subtotal" aria-label="Subtotal Amount (including tax)">
-          <div class="input-group-append">
+        </div>
+
+        <div class="row">
+          <div class="col-sm">
+            <label for="tipPercent">Tip Percent</label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend"></div>
+              <input
+                type="text"
+                class="form-control"
+                id="tipPercent"
+                aria-label="Tip Percentage Value"
+                placeholder="Percent Value"
+              />
+              <div class="input-group-append">
+                <span class="input-group-text">%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm">
+            <label for="numPeople">Number of People Splitting the Tip</label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend"></div>
+              <input
+                type="text"
+                class="form-control"
+                id="numPeople"
+                aria-label="Number of People"
+                placeholder="People Paying Tip"
+              />
+              <div class="input-group-append"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm">
+            <button type="button" class="btn btn-primary" id="calculate">
+              Calculate
+            </button>
+          </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+          <div class="col-sm">
+            <!-- <label for="totalWithTip">Total Bill Including Tip</label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+              </div>
+              <span
+                type="text"
+                class="form-control"
+                id="totalWithTip"
+                aria-label="Total Bill Including Tip"
+              >0.00</span>
+              <div class="input-group-append"></div>
+            </div> -->
+
+            <div
+              class="alert alert-success alert-dismissible fade show"
+              role="alert"
+            >
+              <h4 class="alert-heading text-center">Total Bill Amount</h4>
+              <h3 id="totalWithTip" class="text-center">$0</h3>
+
+              <!-- <button
+                type="button"
+                class="close"
+                data-dismiss="alert"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm">
+            <!-- <label for="totalPerPerson">Total Tip Amount Per Person</label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+              </div>
+              <span
+                type="text"
+                class="form-control"
+                id="totalPerPerson"
+                aria-label="Total Amount Per Person"
+              ></span>
+              <div class="input-group-append"></div>
+            </div> -->
+
+            <div class="alert alert-primary alert-dismissible fade show" role="alert">
+              <h4 class="alert-heading text-center">Tip Per Person</h4> 
+              <h3 id="totalPerPerson" class="text-center">$0</h3>
+              <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button> -->
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-sm3">
-          <label for="tipPercent">Tip Percent</label>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-          </div>
-          <input type="text" class="form-control" id="tipPercent" aria-label="Tip Percentage Value">
-
-          <div class="input-group-append">
-            <span class="input-group-text">%</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm3">
-        <label for="numPeople">Number of People Splitting the Tip</label>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-          </div>
-          <input type="text" class="form-control" id="numPeople" aria-label="Number of People">
-          <div class="input-group-append">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm3">
-        <button type="button" class="btn btn-primary" id="calculate">Calculate</button>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm3">
-        <label for="totalWithTip">Total Bill</label>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text">$</span>
-          </div>
-          <span type="text" class="form-control" id="totalWithTip" aria-label="Total Bill Including Tip"></span>
-          <div class="input-group-append">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm3">
-        <label for="totalPerPerson">Tip Per Person Total</label>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text">$</span>
-          </div>
-          <span type="text" class="form-control" id="totalPerPerson" aria-label="Total Amount Per Person"></span>
-          <div class="input-group-append">
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  
-  <script src="assets/js/app.js"></script>
-</body>
+    <script src="assets/js/app.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
