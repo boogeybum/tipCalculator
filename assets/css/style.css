@@ -3,7 +3,7 @@ body {
 }
 
 .calcBox {
-  height: 720px;
+  height: 770px;
   width: 400px;
   padding: 10px;
   margin-top: 20px;
@@ -12,6 +12,6 @@ body {
   border-radius: 10px;
 }
 
-.foot-text {
+.base-text {
   font-size: .8rem;
 }
