@@ -9,7 +9,7 @@ Welcome to the Tip Calculator. Easily calculate tips and even split amount with 
 ## Technology
 
 - Bootstrap, HTML5, CSS, JavaScript
-- Live demo: https://thawing-hollows-18390.herokuapp.com/
+- Live demo: https://boogeybum.github.io/tipCalculator/
 - GitHub Repo: https://github.com/boogeybum/tipCalculator
 
 ## About
